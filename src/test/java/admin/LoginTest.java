@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.admin.LoginPage;
+import utils.ConfigLoader;
 import utils.WaitTool;
 
 public class LoginTest extends BaseTest {
@@ -16,7 +17,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void LoginIsSuccessfulWithCorrectUserNameAndPassword (){
-        LoginPage.login("admin", "admin");
+        LoginPage.login(ConfigLoader.getAdminUsername(), ConfigLoader.getAdminPassword());
 
         var expectedTitle = "Dashboard";
         WaitTool.waitUntilElementWithTextIsVisible("h1", expectedTitle);
@@ -27,7 +28,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void LoginIsNotSuccessfulWithWrongPassword (){
-        LoginPage.login("admin", "");
+        LoginPage.login(ConfigLoader.getAdminUsername(), "");
 
         var expectedAlert = "No match for Username and/or Password.";
         WaitTool.waitUntilElementWithTextIsVisible(".alert.alert-danger.alert-dismissible", expectedAlert);
@@ -37,7 +38,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void LoginIsNotSuccessfulWithWrongUsername (){
-        LoginPage.login("", "admin");
+        LoginPage.login("", ConfigLoader.getAdminPassword());
 
         var expectedAlert = "No match for Username and/or Password.";
         WaitTool.waitUntilElementWithTextIsVisible(".alert.alert-danger.alert-dismissible", expectedAlert);
