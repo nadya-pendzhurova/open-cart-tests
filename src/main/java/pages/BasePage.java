@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.ClickTool;
+import utils.ConfigLoader;
 import utils.LeftMenu;
 import utils.WaitTool;
 
@@ -22,7 +23,7 @@ public class BasePage {
     }
 
     public static String getBaseUrl() {
-        return "http://localhost/";
+        return ConfigLoader.getBaseUrl();
     }
 
     public static void tearDown() {
