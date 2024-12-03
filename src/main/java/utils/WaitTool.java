@@ -42,6 +42,16 @@ public class WaitTool {
         });
     }
 
+    public static void waitForClassToBeRemoved(String selector, String className) {
+        _wait.until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver driver) {
+                var element = driver.findElement(By.cssSelector(selector));
+                String classes = element.getAttribute("class");
+                return classes == null || !classes.contains(className);
+            }
+        });
+    }
+
     public static void wait(int seconds) {
         try {
             // Workaround for 429 Error

@@ -27,7 +27,7 @@ public class BasePage {
     }
 
     public static void tearDown() {
-        //driver.quit();//
+        //driver.quit();
     }
 
     public static String getTitleText() {
@@ -36,5 +36,9 @@ public class BasePage {
 
     public static String getAlertText() {
         return driver.findElement(By.cssSelector(".alert.alert-danger.alert-dismissible")).getText();
+    }
+
+    public static String getValidationError(String id) {
+        return driver.findElement(By.id(id)).getText();
     }
 }

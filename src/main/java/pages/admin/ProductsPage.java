@@ -32,6 +32,8 @@ public class ProductsPage extends BasePage {
         keywordElement.sendKeys(seoKeyword);
 
         driver.findElement(By.cssSelector("button[type=\"submit\"]")).click();
+
+        WaitTool.waitForClassToBeRemoved("#content .page-header .btn-primary i", "fa-circle-notch");
     }
 
     public static ProductModel searchProduct(String name){
