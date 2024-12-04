@@ -25,8 +25,8 @@ public class ProductsTest extends BaseAdminTest {
 
         var actualProduct = ProductsPage.searchProduct(productName);
 
-        Assert.assertEquals(actualProduct.Name, productName);
-        Assert.assertEquals(actualProduct.Model, model);
+        Assert.assertEquals(actualProduct.name, productName);
+        Assert.assertEquals(actualProduct.model, model);
     }
 
     @Test

@@ -46,8 +46,8 @@ public class ProductsPage extends BasePage {
         WaitTool.waitUntilSearchCompletes("table tbody tr", 1);
 
         var result = new ProductModel();
-        result.Name = driver.findElement(By.cssSelector("table tbody tr td:nth-child(3)")).getText().split("\n")[0];
-        result.Model = driver.findElement(By.cssSelector("table tbody tr td:nth-child(4)")).getText();
+        result.name = driver.findElement(By.cssSelector("table tbody tr td:nth-child(3)")).getText().split("\n")[0];
+        result.model = driver.findElement(By.cssSelector("table tbody tr td:nth-child(4)")).getText();
 
         return result;
     }

@@ -1,6 +1,6 @@
 package models;
 
 public class ProductModel {
-    public String Name;
-    public String Model;
+    public String name;
+    public String model;
 }
