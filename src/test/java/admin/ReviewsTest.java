@@ -65,11 +65,9 @@ import utils.LeftMenu;
                     RandomStringUtils.randomAlphanumeric(100),
                     true);
 
-
             var expectedValidationError = "Author must be between 3 and 64 characters!";
             var actualValidationError = CategoriesPage.getValidationError("error-author");
             Assert.assertEquals(actualValidationError, expectedValidationError);
-
         }
 
         @Test
@@ -102,7 +100,6 @@ import utils.LeftMenu;
             var expectedValidationError = "Author must be between 3 and 64 characters!";
             var actualValidationError = CategoriesPage.getValidationError("error-author");
             Assert.assertEquals(actualValidationError, expectedValidationError);
-
         }
 
         @Test
@@ -149,7 +146,6 @@ import utils.LeftMenu;
                     "",
                     true);
 
-
             var expectedValidationError = "Review Text must be at least 1 character!";
             var actualValidationError = CategoriesPage.getValidationError("error-text");
             Assert.assertEquals(actualValidationError, expectedValidationError);
@@ -180,11 +176,9 @@ import utils.LeftMenu;
                     RandomStringUtils.randomAlphanumeric(101),
                     false);
 
-
             var expectedValidationError = "Review rating required!";
             var actualValidationError = CategoriesPage.getValidationError("error-rating");
             Assert.assertEquals(actualValidationError, expectedValidationError);
 
         }
-
     }
