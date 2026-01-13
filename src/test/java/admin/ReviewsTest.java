@@ -43,7 +43,6 @@ import utils.LeftMenu;
 
         @Test
         public void ReviewsIsCreatedWithEmptyAuthor() {
-
             LeftMenu.navigate("menu-catalog", 2, "Products");
 
             ProductsPage.navigateToCreateProduct();
